@@ -1,33 +1,31 @@
 // Product Inventory Array
 let products = ["Laptop", "Phone", "Headphones", "Monitor"];
 
-// Function to log the first product
+// Log the first product
 function logFirstProduct() {
-  console.log("First product:", products[0]);
+  console.log(products[0]);
 }
 
-// Function to update a product name
+// Update product name at a given index
 function updateProductName(index, newName) {
-  if (index >= 0 && index < products.length) {
-    products[index] = newName;
-    console.log("Updated products:", products);
-  } else {
-    console.log("Invalid index");
-  }
+  products[index] = newName;
 }
 
-// Function to remove the last product
+// Remove the last product
 function removeLastProduct() {
-  let removedProduct = products.pop();
-  console.log("Removed product:", removedProduct);
-  console.log("Updated products:", products);
+  products.pop();
 }
 
-// Testing
-console.log("Original products:", products);
+// Add a new product
+function addProduct(newProduct) {
+  products.push(newProduct);
+}
 
-logFirstProduct();
-
-updateProductName(2, "Wireless Headphones");
-
-removeLastProduct();
+// Export functions for testing (IMPORTANT)
+module.exports = {
+  products,
+  logFirstProduct,
+  updateProductName,
+  removeLastProduct,
+  addProduct
+};
